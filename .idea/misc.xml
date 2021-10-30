@@ -3,13 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HP/AndroidStudioProjects/UncommonClothing/app/src/main/res/drawable/background_btn.xml" value="0.1125" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/UncommonClothing/app/src/main/res/drawable/purple_background.xml" value="0.1125" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/UncommonClothing/app/src/main/res/layout/activity_cart_list.xml" value="0.1328125" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/UncommonClothing/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/UncommonClothing/app/src/main/res/layout/activity_show_detail.xml" value="0.12121212121212122" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/UncommonClothing/app/src/main/res/layout/activity_tops_view.xml" value="0.18" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/UncommonClothing/app/src/main/res/layout/fragment_card.xml" value="0.2" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/UncommonClothing/app/src/main/res/layout/fragment_profile.xml" value="0.13489583333333333" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/UncommonClothing/app/src/main/res/layout/fragment_profile.xml" value="0.14" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/UncommonClothing/app/src/main/res/layout/fragment_second.xml" value="0.1328125" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/UncommonClothing/app/src/main/res/layout/login_activity.xml" value="0.1" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/UncommonClothing/app/src/main/res/layout/signup_activity.xml" value="0.1" />

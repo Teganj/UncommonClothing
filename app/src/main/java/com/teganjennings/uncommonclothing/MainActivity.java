@@ -57,15 +57,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void tableNavigation() {
-        ConstraintLayout cartBtn = findViewById(R.id.cart_btn);
         ConstraintLayout homeBtn = findViewById(R.id.hoodies_btn);
-
-        cartBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, CartListActivity.class));
-            }
-        });
 
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
