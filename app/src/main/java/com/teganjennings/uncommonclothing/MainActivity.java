@@ -44,12 +44,21 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewPopularList.setLayoutManager(linearLayoutManager);
 
         ArrayList<ClothesList> clotheslist = new ArrayList<>();
-        clotheslist.add(new ClothesList("Haikyuu Top", "popular_1",  9.76));
-        clotheslist.add(new ClothesList("Anime Top", "popular_2", 8.79));
-        clotheslist.add(new ClothesList("Anime Hoodie", "popular_3", 8.5));
-        clotheslist.add(new ClothesList("Mist Shorts", "popular_4", 9.76));
-        clotheslist.add(new ClothesList("Sasuke Jeans", "popular_5", 8.79));
-        clotheslist.add(new ClothesList("Mist joggers", "popular_6", 8.5));
+        clotheslist.add(new ClothesList("Haikyuu Top", "popular_1",  9.75));
+        clotheslist.add(new ClothesList("Anime Top", "popular_2", 8.75));
+        clotheslist.add(new ClothesList("Anime Hoodie", "popular_3", 8.50));
+        clotheslist.add(new ClothesList("Mist Shorts", "popular_4", 9.75));
+        clotheslist.add(new ClothesList("Sasuke Jeans", "popular_5", 8.75));
+        clotheslist.add(new ClothesList("Mist joggers", "popular_6", 8.50));
+        clotheslist.add(new ClothesList("Anime Jeans", "popular_7",  9.75));
+        clotheslist.add(new ClothesList("Tokyo Ghoul Bottoms", "popular_8", 5.95));
+        clotheslist.add(new ClothesList("Kakegurui Bottoms", "popular_9", 8.5));
+        clotheslist.add(new ClothesList("Dragon Ball Z Bottoms", "popular_10", 10.99));
+        clotheslist.add(new ClothesList("Hunter X Hunter Bottoms", "popular_11", 6.50));
+        clotheslist.add(new ClothesList("Promised Neverland Jeans", "popular_12", 15.0));
+        clotheslist.add(new ClothesList("Itachi Hoodie", "popular_13", 9.99));
+        clotheslist.add(new ClothesList("Re:Zero Joggers", "popular_14", 10.0));
+
 
         adapter2 = new PopularAdapter(clotheslist);
         recyclerViewPopularList.setAdapter(adapter2);
