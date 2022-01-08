@@ -30,7 +30,7 @@
         android:drawableStart="@drawable/search"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="@"
+        android:hint="@string/searchBar"
         android:inputType="textPersonName"
         android:paddingStart="20dp"
         android:textSize="14sp"
@@ -84,6 +84,7 @@
                     android:orientation="vertical">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/topsLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/white_btn_background">
@@ -103,8 +104,8 @@
 
                         <ImageView
                             android:id="@+id/icon6"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                            android:layout_width="29dp"
+                            android:layout_height="38dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "31358685069",
+    "project_id": "uncommonclothing-a39cf",
+    "storage_bucket": "uncommonclothing-a39cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31358685069:android:341be4ae6ad500864877c4",
+        "android_client_info": {
+          "package_name": "com.teganjennings.uncommonclothing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31358685069-6qmhal433foh8h01aa3nerr1g7gob90u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoLMMRBN02gnyqLSyu3MS-LwKIWpH4Lbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "31358685069-6qmhal433foh8h01aa3nerr1g7gob90u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

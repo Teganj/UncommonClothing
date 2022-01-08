@@ -1,7 +1,5 @@
 package com.teganjennings.uncommonclothing.Adapter;
-import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +17,11 @@ import com.teganjennings.uncommonclothing.R;
 import java.util.ArrayList;
 
 
-public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHolder> {
+public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.ViewHolder> {
     ArrayList<ClothesList> clothesList;
 
-    public PopularAdapter(ArrayList<ClothesList> FoodList) {
-        this.clothesList = FoodList;
+    public ClothesAdapter(ArrayList<ClothesList> ClothesList) {
+        this.clothesList = ClothesList;
     }
 
     @NonNull
@@ -56,8 +54,6 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
 
     }
 
-
-
     @Override
     public int getItemCount() {
         return clothesList.size();
@@ -76,4 +72,3 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
         }
     }
 }
-

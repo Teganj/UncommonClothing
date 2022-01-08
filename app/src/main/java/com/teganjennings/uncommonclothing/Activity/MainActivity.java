@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +16,7 @@ import android.view.View;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.teganjennings.uncommonclothing.Fragment.CouponCardFragment;
 import com.teganjennings.uncommonclothing.Fragment.ProfileFragment;
-import com.teganjennings.uncommonclothing.Adapter.PopularAdapter;
+import com.teganjennings.uncommonclothing.Adapter.ClothesAdapter;
 import com.teganjennings.uncommonclothing.List.ClothesList;
 import com.teganjennings.uncommonclothing.R;
 
@@ -24,17 +25,39 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapter2;
     private RecyclerView recyclerViewPopularList;
+    MediaPlayer mediaPlayer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.music.Haikyu);
+        mediaPlayer.start();
+
         recyclerViewPopular();
         tableNavigation();
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
+
+
+        ConstraintLayout topsBtn = (ConstraintLayout)findViewById(R.id.topsLayout);
+        topsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, TopActivity.class));
+            }
+        });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mediaPlayer.stop();
+        mediaPlayer.release();
+
     }
 
     private void recyclerViewPopular() {
@@ -60,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         clotheslist.add(new ClothesList("Re:Zero Joggers", "popular_14", 10.0));
 
 
-        adapter2 = new PopularAdapter(clotheslist);
+        adapter2 = new ClothesAdapter(clotheslist);
         recyclerViewPopularList.setAdapter(adapter2);
 
     }

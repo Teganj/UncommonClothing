@@ -38,8 +38,7 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12">
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -71,7 +70,7 @@
             android:background="@drawable/grey_background">
 
             <EditText
-                android:id="@+id/editTextTextPassword"
+                android:id="@+id/password"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:ems="10"
@@ -93,7 +92,7 @@
             <Button
                 android:id="@+id/login"
                 android:layout_width="346dp"
-                android:layout_height="47dp"
+                android:layout_height="48dp"
                 android:backgroundTint="#C0C0C0"
                 android:text="@string/login"
                 android:textColor="#271C2E"
@@ -101,6 +100,7 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.086" />

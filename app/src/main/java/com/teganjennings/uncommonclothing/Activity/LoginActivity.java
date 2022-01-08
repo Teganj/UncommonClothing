@@ -6,25 +6,48 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.teganjennings.uncommonclothing.R;
 
 import java.util.Locale;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
+    EditText loginEmail;
+    EditText loginPassword;
+    Button loginBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         loadLocale();
         setContentView(R.layout.login_activity);
+
+        loginEmail = findViewById(R.id.email);
+        loginPassword = findViewById(R.id.password);
+        loginBtn = findViewById(R.id.login);
+
+        mAuth = FirebaseAuth.getInstance();
+
+        loginBtn.setOnClickListener(view -> {
+            userLogin();
+        });
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(getResources().getString(R.string.app_name));
@@ -36,14 +59,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view){
                 //Show AlertDialog to display list of languages
                 showChangeLanguageDialog();
-            }
-        });
-
-        Button loginBtn = (Button)findViewById(R.id.login);
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
             }
         });
 
@@ -109,4 +124,30 @@ public class LoginActivity extends AppCompatActivity {
         setLocale(language);
     }
 
+    private void userLogin(){
+        String email = loginEmail.getText().toString();
+        String password = loginPassword.getText().toString();
+
+        if (TextUtils.isEmpty(email)){
+            loginEmail.setError("Email cannot be empty");
+            loginEmail.requestFocus();
+        }
+        else if (TextUtils.isEmpty(password)){
+            loginPassword.setError("Password cannot be empty");
+            loginPassword.requestFocus();
+        }
+        else{
+            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(LoginActivity.this, "Login successful.", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    }else{
+                        Toast.makeText(LoginActivity.this, "Error logging in: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+    }
 }
