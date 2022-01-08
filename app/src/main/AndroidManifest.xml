@@ -16,13 +16,13 @@
             android:name="com.teganjennings.uncommonclothing.Activity.ShowDetailActivity"
             android:exported="true" />
         <activity
-            android:name="com.teganjennings.uncommonclothing.MainActivity"
+            android:name="com.teganjennings.uncommonclothing.Activity.MainActivity"
             android:exported="true" />
         <activity
-            android:name="com.teganjennings.uncommonclothing.SignUpActivity"
+            android:name="com.teganjennings.uncommonclothing.Activity.SignUpActivity"
             android:exported="true" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package com.teganjennings.uncommonclothing.Activity;
+package com.teganjennings.uncommonclothing.Fragment;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -23,5 +23,4 @@ public class ProfileFragment extends Fragment {
 
         return inflater.inflate(R.layout.fragment_profile, container, false);
     }
-
 }

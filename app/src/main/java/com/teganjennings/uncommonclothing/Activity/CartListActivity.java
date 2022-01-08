@@ -1,22 +1,21 @@
 package com.teganjennings.uncommonclothing.Activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.teganjennings.uncommonclothing.Adapter.CartAdapter;
+import com.teganjennings.uncommonclothing.Fragment.CouponCardFragment;
+import com.teganjennings.uncommonclothing.Fragment.ProfileFragment;
 import com.teganjennings.uncommonclothing.Helper.CartManagement;
 import com.teganjennings.uncommonclothing.Interface.ChangeNumberItemsListener;
 import com.teganjennings.uncommonclothing.R;
@@ -106,7 +105,7 @@ public class CartListActivity extends AppCompatActivity {
                             break;
 
                         case R.id.nav_card:
-                            selectedFragment = new CardFragment();
+                            selectedFragment = new CouponCardFragment();
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

@@ -1,4 +1,4 @@
-package com.teganjennings.uncommonclothing;
+package com.teganjennings.uncommonclothing.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,11 +13,11 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.teganjennings.uncommonclothing.Activity.CardFragment;
-import com.teganjennings.uncommonclothing.Activity.CartListActivity;
-import com.teganjennings.uncommonclothing.Activity.ProfileFragment;
+import com.teganjennings.uncommonclothing.Fragment.CouponCardFragment;
+import com.teganjennings.uncommonclothing.Fragment.ProfileFragment;
 import com.teganjennings.uncommonclothing.Adapter.PopularAdapter;
 import com.teganjennings.uncommonclothing.List.ClothesList;
+import com.teganjennings.uncommonclothing.R;
 
 import java.util.ArrayList;
 
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
 
                         case R.id.nav_card:
-                            selectedFragment = new CardFragment();
+                            selectedFragment = new CouponCardFragment();
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

@@ -1,4 +1,4 @@
-package com.teganjennings.uncommonclothing;
+package com.teganjennings.uncommonclothing.Activity;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -13,6 +13,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.teganjennings.uncommonclothing.R;
 
 import java.util.Locale;
 
