@@ -6,6 +6,14 @@
     <string name="signUpText">Clarú!</string>
     <string name="createAccount">Cruthaigh Cuntas!</string>
     <string name ="searchBar">Cuardaigh Éadaí</string>
+    <string name="addToCart">Cuir le Cart</string>
+    <string name="myCart">Mo Chairt</string>
+    <string name="itemsTot">Míreanna Iomlán:</string>
+    <string name="delCost">Costas Seachadta:</string>
+    <string name="total">Iomlán:</string>
+    <string name="checkout">Seiceáil</string>
+    <string name="cartIsEmpty">Tá do Chairt Folamh</string>
+
     <string name="name">Ainm</string>
     <string name="email">Ríomhphost</string>
     <string name="password">Pasfhocal</string>

@@ -6,6 +6,14 @@
     <string name="signUpText">साइन अप करें!</string>
     <string name="createAccount">खाता बनाएं!</string>
     <string name ="searchBar">कपड़े खोजें</string>
+    <string name="addToCart">कार्ट में जोड़ें</string>
+    <string name="myCart">मेरी गाड़ी</string>
+    <string name="itemsTot">कुल आइटम:</string>
+    <string name="delCost">वितरण लागत:</string>
+    <string name="total">कुल:</string>
+    <string name="checkout">चेक आउट</string>
+    <string name="cartIsEmpty">आपकी गाड़ी खाली है</string>
+
     <string name="name">नाम</string>
     <string name="email">ईमेल</string>
     <string name="password">कुंजिका</string>

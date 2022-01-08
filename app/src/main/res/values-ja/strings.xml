@@ -6,6 +6,14 @@
     <string name="signUpText">サインアップ！</string>
     <string name="createAccount">アカウントを作成する</string>
     <string name ="searchBar">服を検索</string>
+    <string name="addToCart">कカートに追加</string>
+    <string name="myCart">私のカート</string>
+    <string name="itemsTot">アイテム合計：</string>
+    <string name="delCost">配送料：</string>
+    <string name="total">合計:</string>
+    <string name="checkout">チェックアウト</string>
+    <string name="cartIsEmpty">あなたのカートは空です</string>
+
     <string name="name">名前</string>
     <string name="email">Eメール</string>
     <string name="password">パスワード</string>

@@ -8,6 +8,13 @@
     <string name="signUpText">Sign Up!</string>
     <string name="createAccount">Create Account!</string>
     <string name="searchBar">Search Clothing</string>
+    <string name="addToCart">Add To Cart</string>
+    <string name="myCart">My Cart</string>
+    <string name="itemsTot">Items Total:</string>
+    <string name="delCost">Delivery Cost:</string>
+    <string name="total">Total:</string>
+    <string name="checkout">Checkout</string>
+    <string name="cartIsEmpty">Your Cart is Empty</string>
 
     <string name="name">Name</string>
     <string name="email">Email</string>

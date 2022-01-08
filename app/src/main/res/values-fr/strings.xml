@@ -6,6 +6,14 @@
     <string name="signUpText">S\'inscrire!</string>
     <string name="createAccount">Créer un compte!</string>
     <string name ="searchBar">Rechercher des vêtements</string>
+    <string name="addToCart">Ajouter au panier</string>
+    <string name="myCart">Mon panier</string>
+    <string name="itemsTot">Total des articles:</string>
+    <string name="delCost">Frais de port:</string>
+    <string name="total">Le total:</string>
+    <string name="checkout">Vérifier</string>
+    <string name="cartIsEmpty">Votre panier est vide</string>
+
     <string name="name">Nom</string>
     <string name="email">Email</string>
     <string name="password">Mot De Passe</string>
