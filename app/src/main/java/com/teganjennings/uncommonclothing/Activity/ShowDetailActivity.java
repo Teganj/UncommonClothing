@@ -1,8 +1,10 @@
 package com.teganjennings.uncommonclothing.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.teganjennings.uncommonclothing.Fragment.CartListFragment;
 import com.teganjennings.uncommonclothing.Fragment.CouponCardFragment;
 import com.teganjennings.uncommonclothing.Fragment.ProfileFragment;
 import com.teganjennings.uncommonclothing.Helper.CartManagement;
@@ -76,6 +79,14 @@ public class ShowDetailActivity extends AppCompatActivity {
                 cartManagement.insertFood(object);
             }
         });
+
+        Button closePageBtn = (Button)findViewById(R.id.closeBtn);
+        closePageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void initView() {
@@ -97,11 +108,11 @@ public class ShowDetailActivity extends AppCompatActivity {
 
                     switch (item.getItemId()){
                         case R.id.nav_home:
-                            selectedFragment = new ProfileFragment();
+                            startActivity(new Intent(ShowDetailActivity.this, MainActivity.class));
                             break;
 
                         case R.id.nav_cart:
-                            selectedFragment = new ProfileFragment();
+                            selectedFragment = new CartListFragment();
                             break;
 
                         case R.id.nav_profile:

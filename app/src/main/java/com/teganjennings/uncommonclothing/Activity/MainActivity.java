@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.teganjennings.uncommonclothing.Fragment.CartListFragment;
 import com.teganjennings.uncommonclothing.Fragment.CouponCardFragment;
 import com.teganjennings.uncommonclothing.Fragment.ProfileFragment;
 import com.teganjennings.uncommonclothing.Adapter.ClothesAdapter;

@@ -1,13 +1,16 @@
-package com.teganjennings.uncommonclothing.Activity;
+package com.teganjennings.uncommonclothing.Fragment;
 
-import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,14 +18,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.teganjennings.uncommonclothing.Adapter.CartAdapter;
-import com.teganjennings.uncommonclothing.Fragment.CartListFragment;
-import com.teganjennings.uncommonclothing.Fragment.CouponCardFragment;
-import com.teganjennings.uncommonclothing.Fragment.ProfileFragment;
 import com.teganjennings.uncommonclothing.Helper.CartManagement;
 import com.teganjennings.uncommonclothing.Interface.ChangeNumberItemsListener;
 import com.teganjennings.uncommonclothing.R;
 
-public class CartListActivity extends AppCompatActivity {
+public class CartListFragment extends Fragment {
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_cartlist, container, false);
+        view.setBackgroundColor(Color.WHITE);
+
+        return inflater.inflate(R.layout.fragment_cartlist, container, false);
+    }
+
+public class CartListActivity1 extends AppCompatActivity{
+
 
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerViewList;
@@ -36,7 +48,7 @@ public class CartListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cart_list);
 
         cartManagement = new CartManagement(this);
-        
+
         initView();
         initList();
         calculateCart();
@@ -91,11 +103,11 @@ public class CartListActivity extends AppCompatActivity {
 
                     switch (item.getItemId()){
                         case R.id.nav_home:
-                            startActivity(new Intent(CartListActivity.this, MainActivity.class));
+                            selectedFragment = new ProfileFragment();
                             break;
 
                         case R.id.nav_cart:
-                            selectedFragment = new CartListFragment();
+                            selectedFragment = new ProfileFragment();
                             break;
 
                         case R.id.nav_profile:
@@ -111,5 +123,5 @@ public class CartListActivity extends AppCompatActivity {
                     return true;
                 }
             };
-
+}
 }

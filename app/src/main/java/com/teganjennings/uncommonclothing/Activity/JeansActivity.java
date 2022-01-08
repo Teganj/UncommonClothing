@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.teganjennings.uncommonclothing.Adapter.ClothesAdapter;
+import com.teganjennings.uncommonclothing.Fragment.CartListFragment;
 import com.teganjennings.uncommonclothing.Fragment.CouponCardFragment;
 import com.teganjennings.uncommonclothing.Fragment.ProfileFragment;
 import com.teganjennings.uncommonclothing.List.ClothesList;
@@ -60,13 +61,13 @@ public class JeansActivity extends AppCompatActivity  {
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     Fragment selectedFragment = null;
 
-                    switch (item.getItemId()) {
+                    switch (item.getItemId()){
                         case R.id.nav_home:
                             startActivity(new Intent(JeansActivity.this, MainActivity.class));
                             break;
 
                         case R.id.nav_cart:
-                            startActivity(new Intent(JeansActivity.this, CartListActivity.class));
+                            selectedFragment = new CartListFragment();
                             break;
 
                         case R.id.nav_profile:
