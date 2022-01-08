@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.teganjennings.uncommonclothing.Adapter.ClothesAdapter;
-import com.teganjennings.uncommonclothing.Fragment.CouponCardFragment;
 import com.teganjennings.uncommonclothing.List.ClothesList;
 import com.teganjennings.uncommonclothing.R;
 
@@ -37,12 +36,12 @@ public class HoodiesActivity extends AppCompatActivity{
     private void recyclerViewHoodies() {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerViewHoodiesList = findViewById(R.id.recyclerViewTop);
+        recyclerViewHoodiesList = findViewById(R.id.recyclerViewHoodies);
         recyclerViewHoodiesList.setLayoutManager(linearLayoutManager);
 
         ArrayList<ClothesList> clotheslist = new ArrayList<>();
-        clotheslist.add(new ClothesList("Anime Hoodie", "popular_3", 8.50));
-        clotheslist.add(new ClothesList("Itachi Hoodie", "popular_13", 9.99));
+        clotheslist.add(new ClothesList("Haikyuu Top", "popular_1", 9.75));
+        clotheslist.add(new ClothesList("Anime Top", "popular_2", 8.75));
 
 
         adapter2 = new ClothesAdapter(clotheslist);
@@ -66,7 +65,7 @@ public class HoodiesActivity extends AppCompatActivity{
                             break;
 
                         case R.id.nav_card:
-                            selectedFragment = new CouponCardFragment();
+                            startActivity(new Intent(HoodiesActivity.this, SearchActivity.class));
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

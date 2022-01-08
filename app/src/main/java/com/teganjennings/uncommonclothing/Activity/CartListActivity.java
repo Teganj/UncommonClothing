@@ -2,22 +2,16 @@ package com.teganjennings.uncommonclothing.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.teganjennings.uncommonclothing.Adapter.CartAdapter;
-import com.teganjennings.uncommonclothing.Fragment.CouponCardFragment;
 import com.teganjennings.uncommonclothing.Helper.CartManagement;
 import com.teganjennings.uncommonclothing.Interface.ChangeNumberItemsListener;
 import com.teganjennings.uncommonclothing.R;
@@ -68,7 +62,7 @@ public class CartListActivity extends AppCompatActivity {
         cardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CartListActivity.this, CouponCardFragment.class));
+                startActivity(new Intent(CartListActivity.this, SearchActivity.class));
             }
         });
     }

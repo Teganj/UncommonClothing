@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.teganjennings.uncommonclothing.Activity.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:name="com.teganjennings.uncommonclothing.Activity.MainActivity"
+        android:label="Home"
+        tools:layout="@layout/activity_main">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
@@ -17,12 +17,22 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.teganjennings.uncommonclothing.Activity.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:name="com.teganjennings.uncommonclothing.Activity.CartListActivity"
+        android:label="Cart"
+        tools:layout="@layout/activity_cart_list">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/ThirdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ThirdFragment"
+        android:name="com.teganjennings.uncommonclothing.Activity.SearchActivity"
+        android:label="Search"
+        tools:layout="@layout/activity_search">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_ThirdFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>

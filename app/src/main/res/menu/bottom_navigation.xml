@@ -9,7 +9,7 @@
         android:title="Cart"/>
 
     <item android:id="@+id/nav_card"
-        android:icon="@drawable/nav_card_icon"
-        android:title="Card"/>
+        android:icon="@drawable/search_back"
+        android:title="Search"/>
 
 </menu>

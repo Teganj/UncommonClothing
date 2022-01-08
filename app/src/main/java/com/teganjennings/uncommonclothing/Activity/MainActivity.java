@@ -14,7 +14,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.teganjennings.uncommonclothing.Fragment.CouponCardFragment;
 import com.teganjennings.uncommonclothing.Adapter.ClothesAdapter;
 import com.teganjennings.uncommonclothing.List.ClothesList;
 import com.teganjennings.uncommonclothing.R;
@@ -32,8 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerViewPopular();
         tableNavigation();
-        bottomNavigation();
 
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         ConstraintLayout topsBtn = (ConstraintLayout)findViewById(R.id.topsLayout);
         topsBtn.setOnClickListener(new View.OnClickListener() {
@@ -68,33 +68,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-    private void bottomNavigation() {
-        LinearLayout homeBtn = findViewById(R.id.nav_home);
-        LinearLayout cartBtn = findViewById(R.id.nav_cart);
-        LinearLayout cardBtn = findViewById(R.id.nav_card);
-
-
-        homeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, MainActivity.class));
-            }
-        });
-        cartBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, CartListActivity.class));
-            }
-        });
-        cardBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, CouponCardFragment.class));
-            }
-        });
-    }
-
 
     private void recyclerViewPopular() {
 
@@ -134,5 +107,30 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Fragment selectedFragment = null;
+
+                    switch (item.getItemId()){
+                        case R.id.nav_home:
+                            startActivity(new Intent(MainActivity.this, MainActivity.class));
+                            break;
+
+                        case R.id.nav_cart:
+                            startActivity(new Intent(MainActivity.this, CartListActivity.class));
+                            break;
+
+                        case R.id.nav_card:
+                            startActivity(new Intent(MainActivity.this, SearchActivity.class));
+                            break;
+                    }
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            selectedFragment).commit();
+                    return true;
+                }
+            };
 
 }

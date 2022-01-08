@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.teganjennings.uncommonclothing.Adapter.ClothesAdapter;
-import com.teganjennings.uncommonclothing.Fragment.CouponCardFragment;
 import com.teganjennings.uncommonclothing.List.ClothesList;
 import com.teganjennings.uncommonclothing.R;
 
@@ -66,7 +65,7 @@ public class TopActivity extends AppCompatActivity {
                             break;
 
                         case R.id.nav_card:
-                            selectedFragment = new CouponCardFragment();
+                            startActivity(new Intent(TopActivity.this, SearchActivity.class));
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
