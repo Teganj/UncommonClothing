@@ -3,9 +3,28 @@
     <string name="app_name">Éadaí Neamhchoitianta</string>
 
     <string name="welcome">Fáilte</string>
+    <string name="signUpText">Clarú!</string>
+    <string name="createAccount">Cruthaigh Cuntas!</string>
+    <string name ="searchBar">Cuardaigh Éadaí</string>
+    <string name="name">Ainm</string>
     <string name="email">Ríomhphost</string>
     <string name="password">Pasfhocal</string>
+    <string name="cpassword">Deimhnigh Pasfhocal</string>
     <string name="login">Logáil Isteach</string>
     <string name="signup">Nach bhfuil cuntas agat? Clarú</string>
     <string name="changeLang">Athraigh Teanga</string>
+
+    <string name="top">T-léine</string>
+    <string name="bottoms">Bríste</string>
+    <string name="hoodies">Geansaí</string>
+    <string name="jeans">Jíon</string>
+
+    <string name="title_activity_tops_view">TopsViewActivity</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
 </resources>

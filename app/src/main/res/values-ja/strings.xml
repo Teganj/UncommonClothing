@@ -3,9 +3,27 @@
     <string name="app_name">珍しい服</string>
 
     <string name="welcome">いらっしゃいませ</string>
+    <string name="signUpText">サインアップ！</string>
+    <string name="createAccount">アカウントを作成する</string>
+    <string name ="searchBar">服を検索</string>
+    <string name="name">名前</string>
     <string name="email">Eメール</string>
     <string name="password">パスワード</string>
+    <string name="cpassword">パスワードを認証する</string>
     <string name="login">ログイン</string>
     <string name="signup">アカウントを持っていないのですか？サインアップ</string>
     <string name="changeLang">言語を変えてください</string>
+
+    <string name="top">上</string>
+    <string name="bottoms">ボトムス</string>
+    <string name="hoodies">パーカー</string>
+    <string name="jeans">ジーンズ</string>
+
+    <string name="title_activity_tops_view">TopsViewActivity</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

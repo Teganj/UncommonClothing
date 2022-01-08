@@ -3,9 +3,28 @@
     <string name="app_name">असामान्य वस्त्र</string>
 
     <string name="welcome">स्वागत</string>
+    <string name="signUpText">साइन अप करें!</string>
+    <string name="createAccount">खाता बनाएं!</string>
+    <string name ="searchBar">कपड़े खोजें</string>
+    <string name="name">नाम</string>
     <string name="email">ईमेल</string>
     <string name="password">कुंजिका</string>
+    <string name="cpassword">पासवर्ड की पुष्टि कीजिये</string>
     <string name="login">लॉग इन करें</string>
     <string name="signup">क्या आपका कोई खाता नहीं है? साइन अप करें</string>
     <string name="changeLang">भाषा बदलो</string>
+
+    <string name="top">शीर्ष</string>
+    <string name="bottoms">नीचे</string>
+    <string name="hoodies">हूडीज़</string>
+    <string name="jeans">जीन्स</string>
+
+    <string name="title_activity_tops_view">TopsViewActivity</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
 </resources>

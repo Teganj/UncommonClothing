@@ -30,7 +30,7 @@
         android:drawableStart="@drawable/search"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Search Clothing"
+        android:hint="@"
         android:inputType="textPersonName"
         android:paddingStart="20dp"
         android:textSize="14sp"
@@ -116,7 +116,7 @@
                         android:id="@+id/logoutTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Tops"
+                        android:text="@string/top"
                         android:textAlignment="center"
                         android:textColor="#34346E"
                         android:textSize="18sp" />
@@ -159,7 +159,7 @@
                         android:id="@+id/settingsTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Shorts"
+                        android:text="@string/bottoms"
                         android:textAlignment="center"
                         android:textColor="#34346E"
                         android:textSize="18sp" />
@@ -204,7 +204,7 @@
                         android:id="@+id/mapsTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Hoodies"
+                        android:text="@string/hoodies"
                         android:textAlignment="center"
                         android:textColor="#34346E"
                         android:textSize="18sp" />
@@ -248,7 +248,7 @@
                         android:id="@+id/inboxTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Bottoms"
+                        android:text="@string/jeans"
                         android:textAlignment="center"
                         android:textColor="#34346E"
                         android:textSize="18sp" />
