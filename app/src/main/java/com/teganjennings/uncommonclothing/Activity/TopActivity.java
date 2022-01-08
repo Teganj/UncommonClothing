@@ -12,9 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.teganjennings.uncommonclothing.Adapter.ClothesAdapter;
-import com.teganjennings.uncommonclothing.Fragment.CartListFragment;
 import com.teganjennings.uncommonclothing.Fragment.CouponCardFragment;
-import com.teganjennings.uncommonclothing.Fragment.ProfileFragment;
 import com.teganjennings.uncommonclothing.List.ClothesList;
 import com.teganjennings.uncommonclothing.R;
 
@@ -66,7 +64,7 @@ public class TopActivity extends AppCompatActivity {
                             break;
 
                         case R.id.nav_cart:
-                            selectedFragment = new CartListFragment();
+                            startActivity(new Intent(TopActivity.this, CartListActivity.class));
                             break;
 
                         case R.id.nav_card:

@@ -14,9 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.teganjennings.uncommonclothing.Fragment.CartListFragment;
 import com.teganjennings.uncommonclothing.Fragment.CouponCardFragment;
-import com.teganjennings.uncommonclothing.Fragment.ProfileFragment;
 import com.teganjennings.uncommonclothing.Helper.CartManagement;
 import com.teganjennings.uncommonclothing.List.ClothesList;
 import com.teganjennings.uncommonclothing.R;
@@ -112,7 +110,7 @@ public class ShowDetailActivity extends AppCompatActivity {
                             break;
 
                         case R.id.nav_cart:
-                            selectedFragment = new CartListFragment();
+                            startActivity(new Intent(ShowDetailActivity.this, CartListActivity.class));
                             break;
 
                         case R.id.nav_card:
