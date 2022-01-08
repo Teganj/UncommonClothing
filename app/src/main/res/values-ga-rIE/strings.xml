@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Éadaí Neamhchoitianta</string>
+
+    <string name="welcome">Fáilte</string>
+    <string name="email">Ríomhphost</string>
+    <string name="password">Pasfhocal</string>
+    <string name="login">Logáil Isteach</string>
+    <string name="signup">Nach bhfuil cuntas agat? Clarú</string>
+    <string name="changeLang">Athraigh Teanga</string>
+</resources>

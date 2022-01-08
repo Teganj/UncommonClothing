@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">珍しい服</string>
+
+    <string name="welcome">いらっしゃいませ</string>
+    <string name="email">Eメール</string>
+    <string name="password">パスワード</string>
+    <string name="login">ログイン</string>
+    <string name="signup">アカウントを持っていないのですか？サインアップ</string>
+    <string name="changeLang">言語を変えてください</string>
+</resources>
