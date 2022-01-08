@@ -130,6 +130,7 @@
                     android:orientation="vertical">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/bottomsLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/white_btn_background">
@@ -173,7 +174,7 @@
                     android:orientation="vertical">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/hoodies_btn"
+                        android:id="@+id/hoodiesLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/white_btn_background">
@@ -218,7 +219,7 @@
                     android:orientation="vertical">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/bottoms_btn"
+                        android:id="@+id/jeansLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/white_btn_background">

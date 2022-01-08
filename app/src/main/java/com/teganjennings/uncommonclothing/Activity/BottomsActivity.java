@@ -19,37 +19,40 @@ import com.teganjennings.uncommonclothing.R;
 
 import java.util.ArrayList;
 
-public class TopActivity extends AppCompatActivity {
+public class BottomsActivity extends AppCompatActivity {
+
     private RecyclerView.Adapter adapter2;
-    private RecyclerView recyclerViewTopsList;
+    private RecyclerView recyclerViewBottomsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tops_activity);
+        setContentView(R.layout.bottoms_activity);
 
-        recyclerViewTops();
+        recyclerViewBottoms();
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
     }
 
-    private void recyclerViewTops() {
+    private void recyclerViewBottoms() {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerViewTopsList = findViewById(R.id.recyclerViewJean);
-        recyclerViewTopsList.setLayoutManager(linearLayoutManager);
+        recyclerViewBottomsList = findViewById(R.id.recyclerViewBottom);
+        recyclerViewBottomsList.setLayoutManager(linearLayoutManager);
 
         ArrayList<ClothesList> clotheslist = new ArrayList<>();
-        clotheslist.add(new ClothesList("Haikyuu Top", "popular_1", 9.75));
-        clotheslist.add(new ClothesList("Anime Top", "popular_2", 8.75));
+        clotheslist.add(new ClothesList("Mist Shorts", "popular_4", 9.75));
+        clotheslist.add(new ClothesList("Mist joggers", "popular_6", 8.50));
         clotheslist.add(new ClothesList("Tokyo Ghoul Bottoms", "popular_8", 5.95));
+        clotheslist.add(new ClothesList("Kakegurui Bottoms", "popular_9", 8.5));
+        clotheslist.add(new ClothesList("Dragon Ball Z Bottoms", "popular_10", 10.99));
         clotheslist.add(new ClothesList("Hunter X Hunter Bottoms", "popular_11", 6.50));
-
+        clotheslist.add(new ClothesList("Re:Zero Joggers", "popular_14", 10.0));
 
         adapter2 = new ClothesAdapter(clotheslist);
-        recyclerViewTopsList.setAdapter(adapter2);
+        recyclerViewBottomsList.setAdapter(adapter2);
 
     }
 
@@ -61,11 +64,11 @@ public class TopActivity extends AppCompatActivity {
 
                     switch (item.getItemId()) {
                         case R.id.nav_home:
-                            startActivity(new Intent(TopActivity.this, MainActivity.class));
+                            startActivity(new Intent(com.teganjennings.uncommonclothing.Activity.BottomsActivity.this, MainActivity.class));
                             break;
 
                         case R.id.nav_cart:
-                            startActivity(new Intent(TopActivity.this, CartListActivity.class));
+                            startActivity(new Intent(com.teganjennings.uncommonclothing.Activity.BottomsActivity.this, CartListActivity.class));
                             break;
 
                         case R.id.nav_profile:
@@ -80,5 +83,7 @@ public class TopActivity extends AppCompatActivity {
                             selectedFragment).commit();
                     return true;
                 }
-    };
+            };
 }
+
+

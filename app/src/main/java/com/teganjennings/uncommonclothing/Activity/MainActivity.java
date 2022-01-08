@@ -25,16 +25,11 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapter2;
     private RecyclerView recyclerViewPopularList;
-    MediaPlayer mediaPlayer;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.music.Haikyu);
-        mediaPlayer.start();
 
         recyclerViewPopular();
         tableNavigation();
@@ -50,13 +45,30 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, TopActivity.class));
             }
         });
-    }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        mediaPlayer.stop();
-        mediaPlayer.release();
+        ConstraintLayout bottomsBtn = (ConstraintLayout)findViewById(R.id.bottomsLayout);
+        bottomsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, BottomsActivity.class));
+            }
+        });
+
+        ConstraintLayout hoodiesBtn = (ConstraintLayout)findViewById(R.id.hoodiesLayout);
+        hoodiesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, HoodiesActivity.class));
+            }
+        });
+
+        ConstraintLayout jeansBtn = (ConstraintLayout)findViewById(R.id.jeansLayout);
+        jeansBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, JeansActivity.class));
+            }
+        });
 
     }
 
@@ -89,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void tableNavigation() {
-        ConstraintLayout homeBtn = findViewById(R.id.hoodies_btn);
+        ConstraintLayout homeBtn = findViewById(R.id.hoodiesLayout);
 
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override

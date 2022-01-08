@@ -19,14 +19,15 @@ import com.teganjennings.uncommonclothing.R;
 
 import java.util.ArrayList;
 
-public class TopActivity extends AppCompatActivity {
+public class JeansActivity extends AppCompatActivity  {
+
     private RecyclerView.Adapter adapter2;
-    private RecyclerView recyclerViewTopsList;
+    private RecyclerView recyclerViewJeansList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tops_activity);
+        setContentView(R.layout.jeans_activity);
 
         recyclerViewTops();
 
@@ -38,8 +39,8 @@ public class TopActivity extends AppCompatActivity {
     private void recyclerViewTops() {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerViewTopsList = findViewById(R.id.recyclerViewJean);
-        recyclerViewTopsList.setLayoutManager(linearLayoutManager);
+        recyclerViewJeansList = findViewById(R.id.recyclerViewJeans);
+        recyclerViewJeansList.setLayoutManager(linearLayoutManager);
 
         ArrayList<ClothesList> clotheslist = new ArrayList<>();
         clotheslist.add(new ClothesList("Haikyuu Top", "popular_1", 9.75));
@@ -49,7 +50,7 @@ public class TopActivity extends AppCompatActivity {
 
 
         adapter2 = new ClothesAdapter(clotheslist);
-        recyclerViewTopsList.setAdapter(adapter2);
+        recyclerViewJeansList.setAdapter(adapter2);
 
     }
 
@@ -61,11 +62,11 @@ public class TopActivity extends AppCompatActivity {
 
                     switch (item.getItemId()) {
                         case R.id.nav_home:
-                            startActivity(new Intent(TopActivity.this, MainActivity.class));
+                            startActivity(new Intent(JeansActivity.this, MainActivity.class));
                             break;
 
                         case R.id.nav_cart:
-                            startActivity(new Intent(TopActivity.this, CartListActivity.class));
+                            startActivity(new Intent(JeansActivity.this, CartListActivity.class));
                             break;
 
                         case R.id.nav_profile:
@@ -80,5 +81,5 @@ public class TopActivity extends AppCompatActivity {
                             selectedFragment).commit();
                     return true;
                 }
-    };
+            };
 }
