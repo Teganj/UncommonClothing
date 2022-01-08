@@ -127,10 +127,6 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(new Intent(MainActivity.this, CartListActivity.class));
                             break;
 
-                        case R.id.nav_profile:
-                            selectedFragment = new ProfileFragment();
-                            break;
-
                         case R.id.nav_card:
                             selectedFragment = new CouponCardFragment();
                             break;

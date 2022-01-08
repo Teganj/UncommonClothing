@@ -69,10 +69,6 @@ public class HoodiesActivity extends AppCompatActivity{
                             selectedFragment = new CartListFragment();
                             break;
 
-                        case R.id.nav_profile:
-                            selectedFragment = new ProfileFragment();
-                            break;
-
                         case R.id.nav_card:
                             selectedFragment = new CouponCardFragment();
                             break;

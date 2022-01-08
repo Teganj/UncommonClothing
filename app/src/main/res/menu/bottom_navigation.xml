@@ -12,7 +12,4 @@
         android:icon="@drawable/nav_card_icon"
         android:title="Card"/>
 
-    <item android:id="@+id/nav_profile"
-        android:icon="@drawable/nav_profile_icon"
-        android:title="Profile"/>
 </menu>
