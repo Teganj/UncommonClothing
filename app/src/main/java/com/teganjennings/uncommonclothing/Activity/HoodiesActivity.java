@@ -37,14 +37,12 @@ public class HoodiesActivity extends AppCompatActivity{
     private void recyclerViewHoodies() {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerViewHoodiesList = findViewById(R.id.recyclerViewJean);
+        recyclerViewHoodiesList = findViewById(R.id.recyclerViewTop);
         recyclerViewHoodiesList.setLayoutManager(linearLayoutManager);
 
         ArrayList<ClothesList> clotheslist = new ArrayList<>();
-        clotheslist.add(new ClothesList("Haikyuu Top", "popular_1", 9.75));
-        clotheslist.add(new ClothesList("Anime Top", "popular_2", 8.75));
-        clotheslist.add(new ClothesList("Tokyo Ghoul Bottoms", "popular_8", 5.95));
-        clotheslist.add(new ClothesList("Hunter X Hunter Bottoms", "popular_11", 6.50));
+        clotheslist.add(new ClothesList("Anime Hoodie", "popular_3", 8.50));
+        clotheslist.add(new ClothesList("Itachi Hoodie", "popular_13", 9.99));
 
 
         adapter2 = new ClothesAdapter(clotheslist);
@@ -65,6 +63,7 @@ public class HoodiesActivity extends AppCompatActivity{
 
                         case R.id.nav_cart:
                             startActivity(new Intent(HoodiesActivity.this, CartListActivity.class));
+                            break;
 
                         case R.id.nav_card:
                             selectedFragment = new CouponCardFragment();

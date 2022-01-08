@@ -37,14 +37,12 @@ public class TopActivity extends AppCompatActivity {
     private void recyclerViewTops() {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerViewTopsList = findViewById(R.id.recyclerViewJean);
+        recyclerViewTopsList = findViewById(R.id.recyclerViewTop);
         recyclerViewTopsList.setLayoutManager(linearLayoutManager);
 
         ArrayList<ClothesList> clotheslist = new ArrayList<>();
         clotheslist.add(new ClothesList("Haikyuu Top", "popular_1", 9.75));
         clotheslist.add(new ClothesList("Anime Top", "popular_2", 8.75));
-        clotheslist.add(new ClothesList("Tokyo Ghoul Bottoms", "popular_8", 5.95));
-        clotheslist.add(new ClothesList("Hunter X Hunter Bottoms", "popular_11", 6.50));
 
 
         adapter2 = new ClothesAdapter(clotheslist);

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -14,18 +15,22 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.teganjennings.uncommonclothing.Adapter.CartAdapter;
 import com.teganjennings.uncommonclothing.Fragment.CouponCardFragment;
 import com.teganjennings.uncommonclothing.Helper.CartManagement;
 import com.teganjennings.uncommonclothing.Interface.ChangeNumberItemsListener;
 import com.teganjennings.uncommonclothing.R;
 
+
+
 public class CartListActivity extends AppCompatActivity {
 
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerViewList;
     private CartManagement cartManagement;
-    private TextView totalFeeTxt, deliveryTxt, totalTxt, emptyTxt;
+    private TextView totalFeeTxt, taxTxt, deliveryTxt, totalTxt, emptyTxt;
+    private double tax;
     private ScrollView scrollView;
 
     @Override
@@ -34,25 +39,52 @@ public class CartListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cart_list);
 
         cartManagement = new CartManagement(this);
-        
+
         initView();
         initList();
-        calculateCart();
+        calculateCard();
+        bottomNavigation();
+
     }
 
+    private void bottomNavigation() {
+        LinearLayout homeBtn = findViewById(R.id.nav_home);
+        LinearLayout cartBtn = findViewById(R.id.nav_cart);
+        LinearLayout cardBtn = findViewById(R.id.nav_card);
+
+
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CartListActivity.this, MainActivity.class));
+            }
+        });
+        cartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CartListActivity.this, CartListActivity.class));
+            }
+        });
+        cardBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CartListActivity.this, CouponCardFragment.class));
+            }
+        });
+    }
 
     private void initList() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerViewList.setLayoutManager(linearLayoutManager);
-        adapter = new CartAdapter(cartManagement.getCartList(), this, new ChangeNumberItemsListener() {
+        adapter = new CartAdapter(cartManagement.getListCard(), this, new ChangeNumberItemsListener() {
             @Override
             public void changed() {
-                calculateCart();
+                calculateCard();
             }
         });
 
         recyclerViewList.setAdapter(adapter);
-        if (cartManagement.getCartList().isEmpty()) {
+        if (cartManagement.getListCard().isEmpty()) {
             emptyTxt.setVisibility(View.VISIBLE);
             scrollView.setVisibility(View.GONE);
         } else {
@@ -61,49 +93,27 @@ public class CartListActivity extends AppCompatActivity {
         }
     }
 
-    private void calculateCart() {
+    private void calculateCard() {
         double percentTax = 0.02;
-        double delivery = 5;
+        double delivery = 10;
 
-        double total = Math.round((cartManagement.getTotalFee() + delivery) * 100.0) / 100.0;
+        tax = Math.round((cartManagement.getTotalFee() * percentTax) * 100.0) / 100.0;
+        double total = Math.round((cartManagement.getTotalFee() + tax + delivery) * 100.0) / 100.0;
         double itemTotal = Math.round(cartManagement.getTotalFee() * 100.0) / 100.0;
 
-        totalFeeTxt.setText("€" + itemTotal);
-        deliveryTxt.setText("€" + delivery);
-        totalTxt.setText("€" + total);
+        totalFeeTxt.setText("$" + itemTotal);
+        taxTxt.setText("$" + tax);
+        deliveryTxt.setText("$" + delivery);
+        totalTxt.setText("$" + total);
     }
+
     private void initView() {
-        recyclerViewList = findViewById(R.id.recyclerView);
+        recyclerViewList = findViewById(R.id.recyclerview);
         totalFeeTxt = findViewById(R.id.totalFeeTxt);
+        taxTxt = findViewById(R.id.taxTxt);
         deliveryTxt = findViewById(R.id.deliveryTxt);
         totalTxt = findViewById(R.id.totalTxt);
         emptyTxt = findViewById(R.id.emptyTxt);
-        scrollView = findViewById(R.id.scrollView3);
+        scrollView = findViewById(R.id.scrollView4);
     }
-
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
-
-                    switch (item.getItemId()){
-                        case R.id.nav_home:
-                            startActivity(new Intent(CartListActivity.this, MainActivity.class));
-                            break;
-
-                        case R.id.nav_cart:
-                            startActivity(new Intent(CartListActivity.this, CartListActivity.class));
-                            break;
-
-                        case R.id.nav_card:
-                            selectedFragment = new CouponCardFragment();
-                            break;
-                    }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            selectedFragment).commit();
-                    return true;
-                }
-            };
-
 }

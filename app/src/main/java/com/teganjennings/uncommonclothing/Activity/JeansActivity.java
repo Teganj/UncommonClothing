@@ -42,11 +42,10 @@ public class JeansActivity extends AppCompatActivity  {
         recyclerViewJeansList.setLayoutManager(linearLayoutManager);
 
         ArrayList<ClothesList> clotheslist = new ArrayList<>();
-        clotheslist.add(new ClothesList("Haikyuu Top", "popular_1", 9.75));
-        clotheslist.add(new ClothesList("Anime Top", "popular_2", 8.75));
-        clotheslist.add(new ClothesList("Tokyo Ghoul Bottoms", "popular_8", 5.95));
-        clotheslist.add(new ClothesList("Hunter X Hunter Bottoms", "popular_11", 6.50));
-
+        clotheslist.add(new ClothesList("Mist Shorts", "popular_4", 9.75));
+        clotheslist.add(new ClothesList("Sasuke Jeans", "popular_5", 8.75));
+        clotheslist.add(new ClothesList("Anime Jeans", "popular_7",  9.75));
+        clotheslist.add(new ClothesList("Promised Neverland Jeans", "popular_12", 15.0));
 
         adapter2 = new ClothesAdapter(clotheslist);
         recyclerViewJeansList.setAdapter(adapter2);

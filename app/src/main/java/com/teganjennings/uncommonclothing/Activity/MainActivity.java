@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.teganjennings.uncommonclothing.Fragment.CouponCardFragment;
@@ -31,9 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerViewPopular();
         tableNavigation();
-
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        bottomNavigation();
 
 
         ConstraintLayout topsBtn = (ConstraintLayout)findViewById(R.id.topsLayout);
@@ -69,6 +68,33 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    private void bottomNavigation() {
+        LinearLayout homeBtn = findViewById(R.id.nav_home);
+        LinearLayout cartBtn = findViewById(R.id.nav_cart);
+        LinearLayout cardBtn = findViewById(R.id.nav_card);
+
+
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, MainActivity.class));
+            }
+        });
+        cartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, CartListActivity.class));
+            }
+        });
+        cardBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, CouponCardFragment.class));
+            }
+        });
+    }
+
 
     private void recyclerViewPopular() {
 
@@ -109,28 +135,4 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
-
-                    switch (item.getItemId()){
-                        case R.id.nav_home:
-                            startActivity(new Intent(MainActivity.this, MainActivity.class));
-                            break;
-
-                        case R.id.nav_cart:
-                            startActivity(new Intent(MainActivity.this, CartListActivity.class));
-                            break;
-
-                        case R.id.nav_card:
-                            selectedFragment = new CouponCardFragment();
-                            break;
-                    }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            selectedFragment).commit();
-                    return true;
-                }
-            };
 }

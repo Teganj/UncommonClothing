@@ -38,7 +38,7 @@ public class BottomsActivity extends AppCompatActivity {
     private void recyclerViewBottoms() {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerViewBottomsList = findViewById(R.id.recyclerViewBottom);
+        recyclerViewBottomsList = findViewById(R.id.recyclerViewBottoms);
         recyclerViewBottomsList.setLayoutManager(linearLayoutManager);
 
         ArrayList<ClothesList> clotheslist = new ArrayList<>();
